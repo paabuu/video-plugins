@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>videojs</title>
+    <link href="http://vjs.zencdn.net/6.2.5/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/5.0.3/videojs.ads.css">
+    <link rel="stylesheet" href="/videojs-preroll.css">
+    <link rel="stylesheet" href="/videojs.vast.js">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .player-list {
+            width: 100%;
+            overflow: hidden;
+        }
+        .video-js {
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-list">
+        <video class="video-js" id="my-player">
+          <source src="/ad.mp4" type="video/mp4">
+          <source src="/ad.mp4" type="video/webm">
+        </video>
+    </div>
+<script src="http://vjs.zencdn.net/6.2.5/video.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/5.0.3/videojs.ads.js"></script>
+<script type="text/javascript" src="videojs-preroll.js"></script>
+<script type="text/javascript" src="vast-client.js"></script>
+<script type="text/javascript" src="videojs.vast.js"></script>
+<script type="text/javascript">
+    videojs('my-player', {
+        controls: true,
+        autoplay: false,
+        preload: 'true',
+        loop: true,
+        poster: '/poster.png',
+        width: "800px",
+        plugins: {
+            ads: {},
+            vast: {
+                url: "/proddev/vast/vast_inline_nonlinear.xml"
+            }
+        }
+    }, function() {
+        var player = this;
+        // console.log(player)
+        // player.preroll({
+        //   src:{src:"//vjs.zencdn.net/v/oceans.mp4",type:"video/mp4"},
+        //   href:"http://videojs.com",
+        //   adsOptions: {debug:true}
+        // });
+    });
+</script>
+</body>
+</html>
