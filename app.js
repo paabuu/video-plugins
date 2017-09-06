@@ -9,6 +9,7 @@ app.use(express.static('static'));
 app.use(express.static('static/mediaelement/dist'));
 
 app.get('/proddev/*', proxy('http://demo.tremorvideo.com/'));
+app.get('/vast/*', proxy('http://videoads.theonion.com/'));
 
 app.get('/videojs', (req, res) => {
     res.sendFile(path.resolve('videojs.html'));

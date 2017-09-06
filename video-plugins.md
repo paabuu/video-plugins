@@ -1,5 +1,9 @@
 ### 视频广告的形式
 
+- VAST & VAPID
+
+	[对比](http://www.knowonlineadvertising.com/difference-between/difference-between-vpaid-and-vast/)
+
 - pre-roll video
 
   在视频播放前播放的一段视频广告
@@ -13,7 +17,7 @@
 
 ### 插件
 
-1. videojs
++ videojs
 
 	options:
 	
@@ -23,19 +27,18 @@
 	- loop
 	- poster: 封面图
 	- width/height: 不设高度可根据视频比例自动调节
-	
-	默认使用html5，不支持html5则使用flash
+	- ...
 
 <!-- 2. Brightcove -->
 
 
-3. JW Player
++ JW Player
 
 除了广告，基本功能都有，广告似乎收费
 
 <!-- 4. Kaltura -->
 
-5. mediaelement.js
++ mediaelement.js
 
     支持html5和flash
 

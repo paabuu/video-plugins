@@ -69,7 +69,7 @@
         <h3>Video Player</h3>
 
         <div class="media-wrapper">
-            <video id="player1" width="100%" controls preload="none"
+            <video id="player1" width="800px" controls preload="none"
                    data-cast-title="Big Buck Bunny"
                    data-cast-description="Big Buck Bunny is now even more a world standard for video standards"
                    poster="http://mediaelementjs.com/images/big_buck_bunny.jpg">
@@ -126,20 +126,6 @@
 		// if (mediaElements[i].tagName === 'AUDIO') {
 		//     features.push('chromecast');
         // }
-	    // new MediaElementPlayer('player1', {
-		//     // This is needed to make Jump Forward to work correctly
-        //     pluginPath: 'https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/',
-		//     shimScriptAccess: 'always',
-		//     autoRewind: false,
-		//     features: features,
-        //     currentMessage: 'Now playing:',
-        //     // vastAdsType: 'vast',
-        //     // vastAdTagUrl: '/vast-sample.xml',
-        //     adsPrerollMediaUrl: ['http://vjs.zencdn.net/v/oceans.mp4'],
-        //     adsPrerollAdUrl: ['http://www.google.com'],
-        //     adsPrerollAdEnableSkip: true,
-        //     adsPrerollAdSkipSeconds: 5
-	    // });
 	    new MediaElementPlayer('player1', {
 		    // This is needed to make Jump Forward to work correctly
             pluginPath: 'https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/',
@@ -147,13 +133,27 @@
 		    autoRewind: false,
 		    features: features,
             currentMessage: 'Now playing:',
-            vastAdsType: 'vast',
-            vastAdTagUrl: '/vast-sample.xml',
-            // adsPrerollMediaUrl: ['http://vjs.zencdn.net/v/oceans.mp4'],
-            // adsPrerollAdUrl: ['http://www.google.com'],
+            // vastAdsType: 'vast',
+            // vastAdTagUrl: '/vast-sample.xml',
+            adsPrerollMediaUrl: ['http://vjs.zencdn.net/v/oceans.mp4'],
+            adsPrerollAdUrl: ['http://www.google.com'],
             adsPrerollAdEnableSkip: true,
             adsPrerollAdSkipSeconds: 5
 	    });
+	    // new MediaElementPlayer('player1', {
+		//     // This is needed to make Jump Forward to work correctly
+        //     pluginPath: 'https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/',
+		//     shimScriptAccess: 'always',
+		//     autoRewind: false,
+		//     features: features,
+        //     currentMessage: 'Now playing:',
+        //     vastAdsType: 'vast',
+        //     vastAdTagUrl: '/vast-sample.xml',
+        //     // adsPrerollMediaUrl: ['http://vjs.zencdn.net/v/oceans.mp4'],
+        //     // adsPrerollAdUrl: ['http://www.google.com'],
+        //     adsPrerollAdEnableSkip: true,
+        //     adsPrerollAdSkipSeconds: 5
+	    // });
     // }
 </script>
 <script>

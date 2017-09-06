@@ -7,8 +7,8 @@
     <title>videojs</title>
     <link href="http://vjs.zencdn.net/6.2.5/video-js.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/5.0.3/videojs.ads.css">
+    <!-- <link href="/videojs-contrib-ads/videojs.ads.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="/videojs-preroll.css">
-    <link rel="stylesheet" href="/videojs.vast.js">
     <style>
         * {
             margin: 0;
@@ -19,6 +19,8 @@
             overflow: hidden;
         }
         .video-js {
+            width: 600px;
+            height: 400px;
             margin: 50px auto;
         }
     </style>
@@ -31,18 +33,25 @@
         </video>
     </div>
 <script src="http://vjs.zencdn.net/6.2.5/video.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/5.0.4-0/videojs.ads.min.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/5.0.3/videojs.ads.js"></script>
 <script type="text/javascript" src="videojs-preroll.js"></script>
 <script type="text/javascript" src="vast-client.js"></script>
 <script type="text/javascript" src="videojs.vast.js"></script>
+
+<!-- // vast -->
+<!-- <script src="http://vjs.zencdn.net/4.4.3/video.js"></script>
+<script src="/videojs-contrib-ads/videojs.ads.js"></script>
+<script type="text/javascript" src="vast-client.js"></script>
+<script type="text/javascript" src="videojs.vast.js"></script> -->
+
 <script type="text/javascript">
-    videojs('my-player', {
+    var v1 = videojs('my-player', {
         controls: true,
         autoplay: false,
         preload: 'true',
-        loop: true,
+        loop: false,
         poster: '/poster.png',
-        width: "400px",
         // plugins: {
         //     ads: {},
         //     vast: {
@@ -51,7 +60,26 @@
         // }
     }, function() {
         var player = this;
-        console.log(player)
+        // player.ads();
+        // player.ads.contentSrc = 'http://vjs.zencdn.net/v/oceans.mp4';
+        //
+        // player.on('contentupdate', function(){
+        //     // fetch ad inventory asynchronously, then ...
+        //     player.trigger('adsready');
+        // });
+        //
+        // player.on('readyforpreroll', function() {
+        //     player.ads.startLinearAdMode();
+        //     // play your linear ad content
+        //     player.src('http://vjs.zencdn.net/v/oceans.mp4');
+        //
+        //     // when all your linear ads have finished… do not confuse this with `ended`
+        //     player.one('adended', function() {
+        //         player.ads.endLinearAdMode();
+        //     });
+        // });
+
+        // console.log(player)
         player.preroll({
           src:{src:"//vjs.zencdn.net/v/oceans.mp4",type:"video/mp4"},
           href:"http://videojs.com",
